@@ -46,7 +46,7 @@ const HomePage = () => {
     <div className="min-h-screen bg-white">
       {/* Top Bar with Icons */}
       <div className="bg-green-600 text-white py-4">
-        <div className="container mx-auto flex justify-between items-center px-8">
+        <div className="container mx-auto flex justify-between items-center px-24">
           <div className="flex space-x-8 items-center">
             <Link href="#" className="hover:opacity-80 flex items-center">
               <FaFacebook className="mr-2" />
@@ -70,7 +70,7 @@ const HomePage = () => {
 
       {/* Main Navigation */}
       <div className="shadow-md mb-6">
-        <div className="container mx-auto py-4 px-8">
+        <div className="container mx-auto py-4 px-24">
           <div className="flex justify-between items-center">
             <div className="text-green-600">
               <div className="flex items-center space-x-2 mb-2">
@@ -112,8 +112,8 @@ const HomePage = () => {
       </div>
 
       {/* Product Section */}
-      <div className="container mx-auto px-4 py-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="container mx-auto px-24 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Product Image Slider */}
           <div className="relative">
             <div className="relative flex justify-center items-center overflow-hidden">
@@ -123,7 +123,7 @@ const HomePage = () => {
                   alt={`Product Image ${currentImageIndex + 1}`}
                   width={500}
                   height={500}
-                  className="h-96 w-auto rounded-md"
+                  className="h-48 md:h-60 lg:h-72 w-auto rounded-md"
                 />
               </div>
               {productImages.length > 1 && (
@@ -145,16 +145,17 @@ const HomePage = () => {
             </div>
 
             {/* Image Preview Thumbnails */}
-            <div className="flex items-center justify-center space-x-2 mt-6">
-              {productImages.map((image, index) => (
-                <Image
-                  key={index}
-                  src={image}
-                  alt={`Thumbnail ${index + 1}`}
-                  width={60}
-                  height={60}
-                  onClick={() => selectImage(index)}
-                  className={`
+            <div className="flex items-center justify-center mt-8">
+              <div className="grid grid-cols-5 gap-6 px-8">
+                {productImages.map((image, index) => (
+                  <Image
+                    key={index}
+                    src={image}
+                    alt={`Thumbnail ${index + 1}`}
+                    width={60}
+                    height={60}
+                    onClick={() => selectImage(index)}
+                    className={`
                     cursor-pointer
                     border-2
                     rounded
@@ -165,8 +166,9 @@ const HomePage = () => {
                     }
                     hover:opacity-75
                   `}
-                />
-              ))}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
