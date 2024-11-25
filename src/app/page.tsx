@@ -1,3 +1,7 @@
-export default function Home() {
-    return <div className="text-2xl font-bold text-red-500">Smart Health</div>;
-}
+import HomePage from "./components/Home";
+
+const Page = () => {
+  return <HomePage />;
+};
+
+export default Page;
