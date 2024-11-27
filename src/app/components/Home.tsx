@@ -113,7 +113,7 @@ const HomePage = () => {
 
       {/* Product Section */}
       <div className="container mx-auto px-24 py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center justify-between">
           {/* Product Image Slider */}
           <div className="relative">
             <div className="relative flex justify-center items-center overflow-hidden">
@@ -174,30 +174,66 @@ const HomePage = () => {
 
           {/* Product Info */}
           <div>
-            <h1 className="text-3xl font-bold mb-4">Hoạt huyết dưỡng não</h1>
+            <h1 className="text-3xl font-bold mb-4">
+              Thiết bị y tế thông minh đa chức năng
+            </h1>
             <div className="inline-block bg-green-100 px-4 py-2 rounded-full mb-6">
-              Hệ thần kinh
+              A2H
             </div>
 
             <div className="space-y-6">
               <div>
-                <h2 className="font-semibold mb-2">Trình bày</h2>
-                <p>Hộp 1, 2, 5 vỉ x 20 viên bao phim.</p>
+                <h2 className="text-lg font-semibold mb-2">Giới thiệu</h2>
+                <p>
+                  Chào các bạn! Hôm nay, chúng tôi rất vui mừng giới thiệu đến
+                  bạn một sản phẩm đột phá trong lĩnh vực y tế:{" "}
+                  <span className="font-bold">
+                    Thiết bị y tế thông minh đa chức năng! 🩺✨
+                  </span>
+                </p>
               </div>
 
               <div>
-                <h2 className="font-semibold mb-2">Chỉ định</h2>
-                <p className="mb-2">Phòng và điều trị các bệnh sau:</p>
+                <h2 className="text-lg font-semibold mb-2">Chức năng</h2>
+                <p className="mb-2">
+                  {" "}
+                  Một thiết bị tích hợp được 7 chức năng đo chỉ số sức khỏe bao
+                  gồm:
+                </p>
                 <ul className="list-decimal ml-5 space-y-2">
                   <li>
-                    Suy giảm trí nhớ, căng thẳng thần kinh, kém tập trung.
+                    <span className="font-bold">Đo Huyết Áp:</span> Theo dõi
+                    huyết áp chính xác, giúp phát hiện sớm các vấn đề tim mạch.
                   </li>
                   <li>
-                    Hội chứng tiền đình với các biểu hiện: đau đầu, hoa mắt,
-                    chóng mặt, mất thăng bằng.
+                    <span className="font-bold">Điện Tâm Đồ (ECG):</span> Giám
+                    sát hoạt động điện của tim, phát hiện rối loạn nhịp tim kịp
+                    thời.
                   </li>
                   <li>
-                    Giảm chức năng não bộ: giảm trí nhớ, suy nhược thần kinh.
+                    <span className="font-bold">Đo Nhịp Tim:</span> Theo dõi
+                    nhịp tim liên tục, giúp bạn điều chỉnh hoạt động thể chất.
+                  </li>
+                  <li>
+                    <span className="font-bold">
+                      Đo Nồng Độ Oxy Trong Máu (SpO2):
+                    </span>{" "}
+                    Đảm bảo cơ thể nhận đủ oxy, rất quan trọng cho sức khỏe hô
+                    hấp.
+                  </li>
+                  <li>
+                    <span className="font-bold">Đo Nhiệt Độ Cơ Thể:</span> Phát
+                    hiện sớm dấu hiệu sốt hoặc nhiễm trùng.
+                  </li>
+                  <li>
+                    <span className="font-bold">Đo Độ pH:</span>
+                    Theo dõi tình trạng axit-bazơ trong cơ thể, hỗ trợ sức khỏe
+                    tiêu hóa.
+                  </li>
+                  <li>
+                    <span className="font-bold">Đo Tiểu Đường (Glucose):</span>{" "}
+                    Giúp bạn theo dõi mức đường huyết, rất cần thiết cho người
+                    mắc bệnh tiểu đường.
                   </li>
                 </ul>
               </div>
@@ -207,9 +243,9 @@ const HomePage = () => {
               <Phone className="text-green-600" />
               <span className="text-gray-700">LIÊN HỆ</span>
               <span className="text-green-600 font-bold text-xl">
-                036 123 4567
+                022 865 99998
               </span>
-              <span className="text-gray-700">ĐỂ BIẾT THÊM THÔNG TIN</span>
+              <span className="text-gray-700">ĐỂ ĐẶT HÀNG NGAY</span>
             </div>
           </div>
         </div>

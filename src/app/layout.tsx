@@ -3,8 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Smart Health",
-  description:
-    "A website for introduction multi-functional smart medical devices",
+  description: "Khám Phá Thiết Bị Y Tế Thông Minh Đa Chức Năng",
 };
 
 export default function RootLayout({
