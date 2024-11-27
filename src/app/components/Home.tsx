@@ -18,8 +18,6 @@ const HomePage = () => {
     "/images/product2.png",
     "/images/product3.png",
     "/images/product4.png",
-    "/images/product5.png",
-    "/images/product6.png",
   ];
 
   // Navigation handler
@@ -181,7 +179,7 @@ const HomePage = () => {
               A2H
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 text-justify">
               <div>
                 <h2 className="text-lg font-semibold mb-2">Giới thiệu</h2>
                 <p>
