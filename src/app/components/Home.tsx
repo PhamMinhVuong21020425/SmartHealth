@@ -16,7 +16,6 @@ const HomePage = () => {
     "/images/product.png",
     "/images/product1.png",
     "/images/product2.png",
-    "/images/product3.png",
     "/images/product4.png",
   ];
 
@@ -46,7 +45,11 @@ const HomePage = () => {
       <div className="bg-green-600 text-white py-4">
         <div className="container mx-auto flex justify-between items-center px-24">
           <div className="flex space-x-8 items-center">
-            <Link href="#" className="hover:opacity-80 flex items-center">
+            <Link
+              href="https://www.facebook.com/groups/853758016650047"
+              target="_blank"
+              className="hover:opacity-80 flex items-center"
+            >
               <FaFacebook className="mr-2" />
               Facebook
             </Link>
