@@ -51,12 +51,17 @@ const Footer = () => {
             <ul className="space-y-2">
               <Link
                 href="https://www.facebook.com/groups/853758016650047"
+                target="_blank"
                 className="hover:opacity-80 flex items-center"
               >
                 <FaFacebook className="mr-2 text-blue-500" />
                 Facebook
               </Link>
-              <Link href="#" className="hover:opacity-80 flex items-center">
+              <Link
+                href="https://www.youtube.com/@Trungganhh2330/featured"
+                target="_blank"
+                className="hover:opacity-80 flex items-center"
+              >
                 <FaYoutube className="mr-2 text-red-500" />
                 Youtube
               </Link>

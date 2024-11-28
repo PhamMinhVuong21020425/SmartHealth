@@ -53,7 +53,11 @@ const HomePage = () => {
               <FaFacebook className="mr-2" />
               Facebook
             </Link>
-            <Link href="#" className="hover:opacity-80 flex items-center">
+            <Link
+              href="https://www.youtube.com/@Trungganhh2330/featured"
+              target="_blank"
+              className="hover:opacity-80 flex items-center"
+            >
               <FaYoutube className="mr-2" />
               Youtube
             </Link>
