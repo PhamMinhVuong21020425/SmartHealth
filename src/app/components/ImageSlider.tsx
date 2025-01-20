@@ -91,7 +91,7 @@ const ImageSlider = ({ images }: { images: string[] }) => {
                 alt={`Full size image ${currentImageIndex + 1}`}
                 width={1200}
                 height={800}
-                className="rounded-md object-contain max-h-[80vh]"
+                className="rounded-md object-fill max-h-[80vh]"
               />
 
               {images.length > 1 && (
