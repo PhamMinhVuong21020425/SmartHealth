@@ -2,41 +2,40 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, ChevronLeft, ChevronRight } from "lucide-react";
+import { Phone } from "lucide-react";
 import { FaFacebook, FaYoutube, FaTiktok } from "react-icons/fa";
+import { PiCertificate } from "react-icons/pi";
+import { AiOutlineProduct } from "react-icons/ai";
 import { SiShopee } from "react-icons/si";
 
-const HomePage = () => {
+import ImageSlider from "./ImageSlider";
+
+const HomePage = ({ productImages }: { productImages: string[] }) => {
   // Active navigation state
   const [activeNav, setActiveNav] = useState("TRANG CHỦ");
 
-  // Product images state
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const productImages = [
-    "/images/product.png",
-    "/images/product1.png",
-    "/images/product2.png",
-    "/images/product4.png",
+  // Tab images state
+  const [activeTabImages, setActiveTabImages] = useState(0);
+
+  const tabs = [
+    {
+      label: "Sản phẩm",
+      icon: <AiOutlineProduct />,
+    },
+    {
+      label: "Nhận xét",
+      icon: <PiCertificate />,
+    },
+  ];
+
+  const certificateImages = [
+    "/images/1.certificate.jpg",
+    "/images/2.certificate.jpg",
   ];
 
   // Navigation handler
   const handleNavClick = (item: string) => {
     setActiveNav(item);
-  };
-
-  // Image slider handlers
-  const nextImage = () => {
-    setCurrentImageIndex(prevIndex => (prevIndex + 1) % productImages.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex(prevIndex =>
-      prevIndex === 0 ? productImages.length - 1 : prevIndex - 1
-    );
-  };
-
-  const selectImage = (index: number) => {
-    setCurrentImageIndex(index);
   };
 
   return (
@@ -118,63 +117,41 @@ const HomePage = () => {
 
       {/* Product Section */}
       <div className="container mx-auto px-24 py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center justify-between">
-          {/* Product Image Slider */}
-          <div className="relative">
-            <div className="relative flex justify-center items-center overflow-hidden">
-              <div className="px-16">
-                <Image
-                  src={productImages[currentImageIndex]}
-                  alt={`Product Image ${currentImageIndex + 1}`}
-                  width={500}
-                  height={500}
-                  className="h-48 md:h-60 lg:h-72 w-auto rounded-md"
-                />
-              </div>
-              {productImages.length > 1 && (
-                <>
-                  <button
-                    onClick={prevImage}
-                    className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200/50 hover:bg-green-100 p-2 rounded-full"
-                  >
-                    <ChevronLeft />
-                  </button>
-                  <button
-                    onClick={nextImage}
-                    className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200/50 hover:bg-green-100 p-2 rounded-full"
-                  >
-                    <ChevronRight />
-                  </button>
-                </>
-              )}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start justify-between">
+          <div className="w-full mx-auto">
+            {/* Tab List */}
+            <div className="flex border-b">
+              {tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveTabImages(index)}
+                  className={`flex items-center gap-2 px-4 py-3 text-md font-medium transition-colors duration-200 ${
+                    activeTabImages === index
+                      ? "border-b-2 border-blue-500 text-blue-600"
+                      : "text-gray-600 hover:text-gray-900"
+                  }`}
+                >
+                  {tab.icon}
+                  {tab.label}
+                </button>
+              ))}
             </div>
 
-            {/* Image Preview Thumbnails */}
-            <div className="flex items-center justify-center mt-8">
-              <div className="grid grid-cols-5 gap-6 px-8">
-                {productImages.map((image, index) => (
-                  <Image
-                    key={index}
-                    src={image}
-                    alt={`Thumbnail ${index + 1}`}
-                    width={60}
-                    height={60}
-                    onClick={() => selectImage(index)}
-                    className={`
-                    cursor-pointer
-                    border-2
-                    rounded
-                    ${
-                      currentImageIndex === index
-                        ? "border-green-500 rounded p-1.5"
-                        : "border-transparent"
-                    }
-                    hover:opacity-75
-                  `}
-                  />
-                ))}
+            {/* Tab Panels */}
+            {tabs.map((tab, index) => (
+              <div
+                key={index}
+                className={`${
+                  activeTabImages === index ? "block" : "hidden"
+                } space-y-4`}
+              >
+                {/* Sample content specific to each tab */}
+                <div className="mt-8">
+                  {index === 0 && <ImageSlider images={productImages} />}
+                  {index === 1 && <ImageSlider images={certificateImages} />}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
 
           {/* Product Info */}
